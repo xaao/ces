@@ -1,8 +1,6 @@
 import time
-
 import requests
 from tqdm import tqdm as tqdm
-
 
 def getname():
     return time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime())
@@ -29,10 +27,7 @@ def paqu(url,num):
                 size=f.write(data)
                 bar.update(size)
 
-
-
-
 if __name__ == '__main__':
-    num=int(input("请输入要爬取几个视频"))
+    num=int(input("请输入要爬取几个视频："))
     url=f'https://www.ku6.com/video/feed?pageNo=0&pageSize={num}&subjectId=76'
     paqu(url,num)
